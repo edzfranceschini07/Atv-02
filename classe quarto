@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+class Quarto {
+    public int numero;
+    public String tipo;
+    public double precoDiario;
+    public boolean disponivel;
+
+    public Quarto(int numero, String tipo, double precoDiario) {
+        this.numero = numero;
+        this.tipo = tipo;
+        this.precoDiario = precoDiario;
+        this.disponivel = true;
+    }
+
+    public void exibirInformacoes() {
+        System.out.println("Quarto Número: " + numero);
+        System.out.println("Tipo: " + tipo);
+        System.out.println("Preço Diário: R$" + precoDiario);
+        System.out.println("Disponível: " + (disponivel ? "Sim" : "Não"));
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o número do quarto:");
+        int numero = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.println("Digite o tipo de quarto:");
+        String tipo = scanner.nextLine();
+
+        System.out.println("Digite o preço diário:");
+        double precoDiario = scanner.nextDouble();
+
+        Quarto quarto = new Quarto(numero, tipo, precoDiario);
+
+        System.out.println("\nInformações do Quarto:");
+        quarto.exibirInformacoes();
+    }
+}
